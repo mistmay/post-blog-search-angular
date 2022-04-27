@@ -1,0 +1,31 @@
+aside {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  form {
+    border-radius: 10px;
+
+    input,
+    textarea {
+      border-radius: 5px;
+      border: 1px solid lightgray;
+    }
+
+    textarea {
+      height: 90px;
+    }
+
+    button {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container>div {
+    width: 50%;
+    border-radius: 10px;
+  }
+}

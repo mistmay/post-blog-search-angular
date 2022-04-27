@@ -1,0 +1,24 @@
+header {
+  height: 140px;
+  z-index: 2;
+
+  input {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  header {
+    height: 70px;
+  }
+}

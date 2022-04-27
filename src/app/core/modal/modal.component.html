@@ -1,0 +1,36 @@
+<aside class="aside-modal position-fixed top-0 start-0 vw-100 vh-100 d-flex justify-content-center align-items-center"
+  *ngIf="getModalStatus()" (click)="clickOutsideModal($event)" #asideModal>
+  <div class="container d-flex justify-content-center align-items-center" #containerModal>
+    <div class="p-5 bg-white text-secondary fw-bold">
+      <form class="p-3 d-flex flex-column justify-content-between align-items-start gap-3 border border-ligth"
+        [formGroup]="form" (ngSubmit)="addPost()">
+        <h2 class="fs-2 text-center">CREATE YOUR POST</h2>
+        <div class="d-flex flex-column align-items-start">
+          <label for="title">Post Title</label>
+          <input id="title" type="text" placeholder="Enter Your Post" class="p-2" formControlName="title">
+          <span class="text-danger mt-2" *ngIf="form.controls['title'].dirty && form.hasError('required', 'title')">
+            *Required<br>
+          </span>
+        </div>
+        <div class="d-flex flex-column align-items-start w-100">
+          <label for="post">Post</label>
+          <textarea id="post" placeholder="Write your post here" class="p-2 w-100" formControlName="post"></textarea>
+          <span class="text-danger mt-2" *ngIf="form.controls['post'].dirty && form.hasError('required', 'post')">
+            *Required<br>
+          </span>
+        </div>
+        <div class="d-flex flex-column align-items-start">
+          <label for="date">Date</label>
+          <input id="date" type="date" placeholder="gg/mm/aaaa" class="p-2" formControlName="date">
+          <span class="text-danger mt-2" *ngIf="form.controls['date'].touched && form.hasError('required', 'date')">
+            *Required<br>
+          </span>
+        </div>
+        <div class="align-self-end d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="btn btn-danger" (click)="resetForm()">cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</aside>

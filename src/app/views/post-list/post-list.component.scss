@@ -1,0 +1,28 @@
+main {
+  margin-top: 140px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+
+  svg {
+    fill: red;
+  }
+}
+
+.container>div {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  main {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container>div {
+    width: 75%;
+  }
+}

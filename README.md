@@ -1,3 +1,5 @@
+Simple App in which you can write a post, delete it and search for a particular post by Title, made with Angular, Bootstrap, Html, Scss and Typescript.
+
 # PostApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
