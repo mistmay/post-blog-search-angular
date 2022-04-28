@@ -1,6 +1,7 @@
 <main class="bg-secondary py-5">
   <div class="container d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-between align-items-center gap-5" *ngIf="posts.length > 0">
+    <div class="d-flex flex-column justify-content-between align-items-center gap-5"
+      *ngIf="posts.length > 0; else noPosts">
       <div class="bg-white p-4 w-100 d-flex flex-column justify-content-between align-items-start gap-3"
         *ngFor="let post of posts | filter:searchFilter">
         <div class="d-flex justify-content-between align-items-start w-100 text-secondary">
@@ -21,3 +22,7 @@
     </div>
   </div>
 </main>
+
+<ng-template #noPosts>
+  <p class="text-white">No posts</p>
+</ng-template>
